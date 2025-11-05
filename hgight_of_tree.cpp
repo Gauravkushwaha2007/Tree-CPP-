@@ -1,5 +1,6 @@
 #include <iostream>
 using namespace std;
+
 class Node{
 public:
     int data;
@@ -19,6 +20,14 @@ int count(Node* root){
     return (left_height + right_height +1);
 }
 
+// sum of All nodes values exist in Tree
+int sum_of_tree(Node* root){
+    if (root == NULL) return 0;
+    left_sum = sum_of_tree(root-> left);
+    right_sum = sum_of_tree(root-> right);
+    return left_sum + right_sum + root-> data;
+}
+
 
 int height_of_tree (Node* root){
     if (root == NULL) return 0;
@@ -26,6 +35,3 @@ int height_of_tree (Node* root){
     right_count = height_of_tree(root->right);
     return (max(left_count, right_count) +1);
 }
-
-
-        
