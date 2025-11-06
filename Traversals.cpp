@@ -1,4 +1,5 @@
 #include <iostream>
+#include <queue>
 using namespace std;
 
 class Node{
@@ -35,6 +36,23 @@ void postorder (Node* root){
     postorder(root-> right);
     cout<< root-> data<< " ";
 }
+
+
+// level order Traversals-- BFS---> 4. Level Order (level by level)
+void levelorder(Node* root){
+    queue <Node*> Q;
+    Q.push(root);
+    while(Q.size() > 0){
+        Node* curr = Q.front();
+        cout<< curr-> data << "/";
+        Q.pop();
+
+        if(curr-> left != NULL) Q.push(curr-> left);
+        if(curr-> right != NULL) Q.push(curr-> right);
+        
+    }
+}
+
 
 int main(){
     Node* root = new Node(1);
