@@ -13,6 +13,7 @@ public:
     }
 };
 
+// Total nodes in a whole Tree
 int count(Node* root){
     if (root ==  NULL) return 0;
     left_height = count(root->left);
@@ -20,7 +21,7 @@ int count(Node* root){
     return (left_height + right_height +1);
 }
 
-// sum of All nodes values exist in Tree
+// Sum of All nodes values exist in Tree
 int sum_of_tree(Node* root){
     if (root == NULL) return 0;
     left_sum = sum_of_tree(root-> left);
@@ -28,10 +29,11 @@ int sum_of_tree(Node* root){
     return left_sum + right_sum + root-> data;
 }
 
-
+// Total level exist in a Tree
 int height_of_tree (Node* root){
     if (root == NULL) return 0;
     left_count = height_of_tree(root->left);
     right_count = height_of_tree(root->right);
     return (max(left_count, right_count) +1);
 }
+
