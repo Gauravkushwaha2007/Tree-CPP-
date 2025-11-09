@@ -46,6 +46,17 @@ int diameter (Node* root){
     return (max(curr_diameter,max(left_diameter, right_diameter)));
 
 }
+
+//Show all Roots data at a specific Level
+void kth_Level(Node*root, int k){
+    if (root==NULL) return;
+    if(k == 1){
+        cout<< root-> data<< " ";
+    }
+    kth_Level(root-> left, k-1);
+    kth_Level(root-> right, k-1);
+}
+
 int main (){
 
     return 0;
