@@ -6,7 +6,6 @@ public:
     int data;
     Node* left;
     Node* right;
-
     Node(int value){
         data = value;
         left = right= NULL;
@@ -57,8 +56,17 @@ void kth_Level(Node*root, int k){
     kth_Level(root-> right, k-1);
 }
 
-int main (){
+// Transform to sum tree(All nodes will treansform with the sum of Left and Right node value+ itself sum
+int Transform (Node* root){
+    if(root == NULL) return 0;
+    left_trans = Transform(root-> left);
+    right_trans = Transform(root-> right);
+    root-> data += left_trans+ right_trans;
+    return root-> data;
+}
 
+int main (){
+    
     return 0;
 }
 
