@@ -26,14 +26,12 @@ Node* build_tree(vector<int> &preOrder) {
 
 }
 
-
 void display(Node* root){
     if (root == NULL) return;
     cout<< root->data << "\n";
     display(root-> left);
     display(root-> right);
 }
-
 
 int main(){
     vector <int> preOrder = {1,2,-1,-1,3,4,-1,-1,5,-1,-1};
